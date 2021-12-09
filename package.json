@@ -1,14 +1,16 @@
 {
-  "name": "vue-step-wizard",
+  "name": "vali-date-multistep",
   "description": "A simple vuejs step/form wizard plugin",
-  "version": "0.1.17",
+  "version": "0.1.24",
   "private": false,
-  "author": {
-    "name": "Tushar Gugnani",
-    "email": "tushar@5balloons.info"
+  "author": "Tushar Gugnani <tushar@5balloons.info>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheedinmar/vue-step-wizard.git"
   },
-  "repository": "https://github.com/tushargugnani/vue-step-wizard",
-  "bugs": "https://github.com/tushargugnani/vue-step-wizard/issues",
+  "bugs": {
+    "url": "https://github.com/cheedinmar/vue-step-wizard/issues"
+  },
   "keywords": [
     "vue form wizard",
     "vue stepper",
@@ -65,5 +67,9 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "homepage": "https://github.com/tushargugnani/vue-step-wizard#readme",
+  "directories": {
+    "doc": "docs"
+  }
 }

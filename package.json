@@ -1,7 +1,7 @@
 {
   "name": "mulltistep-checker",
   "description": "A simple vuejs step/form wizard plugin",
-  "version": "0.1.28",
+  "version": "0.1.30",
   "private": false,
   "author": "Tushar Gugnani <tushar@5balloons.info>",
   "repository": {

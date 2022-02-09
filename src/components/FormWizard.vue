@@ -27,7 +27,7 @@
                 <template v-if="!submitSuccess">
                   <button @click="previousTab" :disabled="currentTab === 0" class="step-button step-button-previous">Previous</button>
                   <button @click="nextTab" v-if="currentTab < totalTabs - 1" class="step-button step-button-next">Next</button>
-                  <button @click="onSubmit" v-if="currentTab === totalTabs - 1" class="step-button step-button-submit">Submit</button>
+                  <button @click="onSubmit" v-if="currentTab === totalTabs - 1" class="step-button step-button-submit">Register Customer</button>
                 </template>
                 <template v-else>
                   <button @click="reset" class="step-button step-button-reset">Reset</button>
@@ -48,7 +48,8 @@ export default {
             storeState: store.state,
             submitSuccess : false,
             progress: 0,
-            isValidationSupport: false
+            isValidationSupport: false,
+            tabNumber:localStorage.tabNumber
         }
     },
     mounted(){
@@ -56,10 +57,34 @@ export default {
             this.totalTabs = this.tabs.length;
             this.currentTab = this.tabs.findIndex((tab) => tab.isActive === true);
 
-            //Select first tab if none is marked selected
-            if(this.currentTab === -1 && this.totalTabs > 0){  
+    //         if (localStorage.tabNumber ) {
+    //           this.tabs[localStorage.tabNumber].isActive = true;
+    //             this.currentTab = localStorage.tabNumber;
+    //   // console.log(JSON.parse(localStorage.data))
+    // }else{
+    //   localStorage.setItem("tabNumber","0")
+    // }
+            // Select first tab if none is marked selected
+           if(localStorage.tabNumber === -1  ||localStorage.tabNumber == 0 ){  
                 this.tabs[0].isActive = true;
                 this.currentTab = 0;
+                console.log(this.tabNumber)
+            }
+             if(localStorage.tabNumber == 1 && localStorage.tabNumber > 0  ){
+              this.tabs[1].isActive = true;
+                this.currentTab = 1;
+            }else if(localStorage.tabNumber == 2 && localStorage.tabNumber > 0){
+              this.tabs[2].isActive = true;
+                this.currentTab = 2;
+            }else if(localStorage.tabNumber == 3 && localStorage.tabNumber > 0){
+              this.tabs[3].isActive = true;
+                this.currentTab = 3;
+            }else if(localStorage.tabNumber == 4 && localStorage.tabNumber > 0){
+              this.tabs[4].isActive = true;
+                this.currentTab = 4;
+            }else if(localStorage.tabNumber == 5 && localStorage.tabNumber > 0){
+              this.tabs[5].isActive = true;
+                this.currentTab = 5;
             }
             
             //Setup Initial Progress
@@ -135,6 +160,7 @@ export default {
             if(this._validateCurrentTab() === false)
                 return;
             this.$emit('onComplete');
+            localStorage.tabNumber = 0
         },
 
         _switchTab(index){
@@ -168,8 +194,17 @@ export default {
     watch:{
        currentTab(){
           store.setCurrentTab(this.currentTab);
-       }
+       },
+       currentTab: {
+      handler(currentTab, oldData) {
+        localStorage.tabNumber = currentTab
+      },
+      deep: true
     }
+
+   
+    
+  },
     
 }
 </script>

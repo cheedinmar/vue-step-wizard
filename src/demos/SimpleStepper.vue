@@ -1,6 +1,6 @@
 <template>
     <form-wizard ref="formwizard" @onComplete="onComplete" @onNextStep="nextStep" @onPreviousStep="previousStep" @onReset="reset">
-        <tab-content title="About You" :selected="true">
+        <tab-content title="About You" >
             <div class="form-group">
                 <label for="fullName">Full Name</label>
                 <input type="text" class="form-control" :class="hasError('fullName') ? 'is-invalid' : ''" placeholder="Enter your name" v-model="formData.fullName">

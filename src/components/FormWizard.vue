@@ -73,18 +73,33 @@ export default {
              if(localStorage.tabNumber == 1 && localStorage.tabNumber > 0  ){
               this.tabs[1].isActive = true;
                 this.currentTab = 1;
+                this.tabs[0].isValidated = true;
             }else if(localStorage.tabNumber == 2 && localStorage.tabNumber > 0){
               this.tabs[2].isActive = true;
                 this.currentTab = 2;
+                this.tabs[0].isValidated = true;
+                this.tabs[1].isValidated = true;
             }else if(localStorage.tabNumber == 3 && localStorage.tabNumber > 0){
               this.tabs[3].isActive = true;
                 this.currentTab = 3;
+                this.tabs[0].isValidated = true;
+                this.tabs[1].isValidated = true;
+                this.tabs[2].isValidated = true;
             }else if(localStorage.tabNumber == 4 && localStorage.tabNumber > 0){
               this.tabs[4].isActive = true;
                 this.currentTab = 4;
+                this.tabs[0].isValidated = true;
+                this.tabs[1].isValidated = true;
+                this.tabs[2].isValidated = true;
+                this.tabs[3].isValidated = true;
             }else if(localStorage.tabNumber == 5 && localStorage.tabNumber > 0){
               this.tabs[5].isActive = true;
                 this.currentTab = 5;
+                this.tabs[0].isValidated = true;
+                this.tabs[1].isValidated = true;
+                this.tabs[2].isValidated = true;
+                this.tabs[3].isValidated = true;
+                this.tabs[3].isValidated = true;
             }
             
             //Setup Initial Progress
